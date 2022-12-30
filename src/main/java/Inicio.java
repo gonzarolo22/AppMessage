@@ -45,7 +45,7 @@ public class Inicio {
 		
 		Conexion conexion= new Conexion();
 		
-		try(Connection cnx= conexion.getConecction()){
+		try(Connection cnx= conexion.getConection()){
 			
 		}catch(Exception e) {
 			System.out.println(e);
