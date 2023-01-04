@@ -30,10 +30,28 @@ public class MensajeService {
 	}
 	
 	public static void borrarMensaje() {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Que mensaje desea eliminar (indice)");
+		int indice=sc.nextInt();
+		
+		MensajeDAO.borrarMensajeDB(indice);
 		
 	}
 	
 	public static void editarMensaje() {
+		MensajeEntity nuevo=new MensajeEntity();
+		
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("indique el nuevo mensaje ");
+		String mensaje=sc.nextLine();
+		nuevo.setMensaje(mensaje);
+		System.out.println("indique que mensaje quiere actualizar ");
+		int indice=sc.nextInt();
+		nuevo.setId_mensaje(indice);
+		
+		
+		MensajeDAO.actualizarMensajeDB(nuevo);
 		
 	}
 	
